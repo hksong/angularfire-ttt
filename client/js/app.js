@@ -6,6 +6,10 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider){
     templateUrl: "partials/signup.html",
     controller: "AuthCtrl",
   })
+  .when('/login',{
+    templateUrl: 'partials/login.html',
+    controller: "LoginCtrl"
+  })
   .when("/rooms",{
     templateUrl: "partials/rooms.html",
     controller: "RoomsCtrl",

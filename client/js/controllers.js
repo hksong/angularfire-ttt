@@ -1,18 +1,21 @@
-app.controller("AuthCtrl", ["$scope", "Auth", "$location", "UserService", 
-  function($scope, Auth, $location, UserService) {
+app.controller("AuthCtrl", ["$scope", "Auth", "$location", "UserService", "AuthService",
+  function($scope, Auth, $location, UserService, AuthService) {
     $scope.createUser = function() {
       $scope.message = null;
       $scope.error = null;
-
-      Auth.$createUser({
+      var inputs = {
         email: $scope.email,
         password: $scope.password
-      }).then(function(authDataObj) {
-        UserService.setCurrentUser(authDataObj);
-        console.log(authDataObj);
-        $scope.message = "User created with uid: " + authDataObj.uid;
-        $location.path('/rooms');
-      }).catch(function(error) {
+      };
+      
+      AuthService.signup(inputs)
+      .then(function() {
+        AuthService.login(inputs)
+        .catch(function(error) {
+          $scope.error = error;
+        });
+      })
+      .catch(function(error) {
         $scope.error = error;
       });
     };
@@ -33,9 +36,31 @@ app.controller("AuthCtrl", ["$scope", "Auth", "$location", "UserService",
   }
 ]);
 
+app.controller("LoginCtrl", ["$scope", "$location", "UserService", "AuthService",
+  function($scope, $location, UserService, AuthService) {
+    $scope.login = function() {
+      $scope.message = null;
+      $scope.error = null;
+      
+      AuthService.login({
+        email: $scope.email,
+        password: $scope.password
+      }).catch(function (error) {
+        $scope.error = error;
+      });
+    };
+  }]);
+
 
 app.controller("RoomsCtrl", ["$scope", "Rooms", "$location", "RoomService", "currentUser",
   function($scope, Rooms, $location, RoomService, currentUser){
+    Rooms.$loaded().then(function (rooms) {
+      
+      if (!rooms.length)
+      {
+        rooms.$add({name:"default"});
+      }
+    });
     $scope.rooms = Rooms;
     $scope.currentUser = currentUser;
     $scope.joinRoom = function(roomId, user){
