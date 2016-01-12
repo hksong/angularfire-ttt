@@ -1,5 +1,11 @@
 <ul>
   <li ng-repeat="room in rooms">
-    <button ng-click="joinRoom(room.$id, currentUser)"> {{room.name}}</button>
+    <div>Name: {{room.name}}; Number of Players:{{room.users.length || "NOT WORKING"}}</div> 
+    <button ng-click="joinRoom(room.$id, currentUser)">Join {{room.name}}</button>
   </li>
 </ul>
+
+<form action="javascript:void(0)" ng-submit="createRoom(room, currentUser)">
+  Room Name <input type="text" ng-model="room.name">
+  <button>Create New Room</button>
+</form>

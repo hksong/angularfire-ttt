@@ -25,6 +25,9 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider){
     resolve:{
       room: function(RoomService, $route){
         return RoomService.getRoom($route.current.params.id);
+      },
+      currentUser : function(UserService) {
+        return UserService.getCurrentUser();
       }
     }
   });
