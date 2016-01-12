@@ -1,6 +1,6 @@
 <ul>
   <li ng-repeat="room in rooms">
-    <div>Name: {{room.name}}; Number of Players:{{room.users.length || "NOT WORKING"}}</div> 
+    <div>Name: {{room.name}}; Number of Players:{{room.length || "NOT WORKING"}}</div> 
     <button ng-click="joinRoom(room.$id, currentUser)">Join {{room.name}}</button>
   </li>
 </ul>

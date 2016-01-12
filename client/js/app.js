@@ -26,8 +26,11 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider){
       room: function(RoomService, $route){
         return RoomService.getRoom($route.current.params.id);
       },
-      currentUser : function(UserService) {
+      currentUser: function(UserService) {
         return UserService.getCurrentUser();
+      },
+      messages: function(MessageService, $route){
+        return MessageService.getAllMessages($route.current.params.id);
       }
     }
   });

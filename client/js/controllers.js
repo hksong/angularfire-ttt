@@ -56,7 +56,8 @@ app.controller("LoginCtrl", ["$scope", "$location", "UserService", "AuthService"
 
 
 app.controller("RoomsCtrl", ["$scope", "Rooms", "$location", "RoomService", "currentUser",
-  function ($scope, Rooms, $location, RoomService, currentUser){
+  function ($scope, Rooms, $location, RoomService, currentUser) {
+
     $scope.rooms = Rooms;
     $scope.currentUser = currentUser;
     $scope.joinRoom = function (roomId, user){
@@ -73,9 +74,14 @@ app.controller("RoomsCtrl", ["$scope", "Rooms", "$location", "RoomService", "cur
   }
 ]);
 
-app.controller("RoomCtrl", ["$scope", "Rooms", "$location", "RoomService", "room", "currentUser",
-  function ($scope, Rooms, $location, RoomService, room, currentUser) {
-    $scope.room = room;
+app.controller("RoomCtrl", ["$scope", "$location", "RoomService", "room", "messages", "MessageService", "currentUser",
+  function ($scope, $location, RoomService, room, messages, MessageService, currentUser) {
+    room.numOfUsers = Object.keys(room.users).length;
+    $scope.room = room; //to display room info to the users
+    $scope.messages = messages;
+    $scope.createMessage = function(message){
+      MessageService.createMessage(room.$id, currentUser, message);
+    };
     $scope.leaveRoom = function (){
       RoomService.leaveRoom(room.$id, currentUser);
       $location.path("/rooms");

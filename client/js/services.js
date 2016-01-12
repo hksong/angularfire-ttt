@@ -1,8 +1,14 @@
 app.service("RoomService", ["$firebaseObject", "$firebaseArray", function($firebaseObject,$firebaseArray){
+  // ref = 
+  // this.getRoom ...
+  // var roomRef = ref.child(id);
+  // this.joinRoom
+  // var joinedRoomRef = ref.child(id+"/users")
+
   return {
     getRoom: function(id){
       var ref = new Firebase("https://radiant-torch-8665.firebaseio.com/rooms/"+id);
-      return $firebaseObject(ref);  
+      return $firebaseObject(ref).$loaded();
     },
     joinRoom: function (id, currentUser) {
       var ref = new Firebase("https://radiant-torch-8665.firebaseio.com/rooms/"+id).child("/users");
@@ -57,5 +63,26 @@ app.service("AuthService", ["Auth", "UserService", function(Auth, UserService) {
         password: inputs.password
       });
     },
+  };
+}]);
+
+app.service("MessageService", ["$firebaseArray", function($firebaseArray){
+  var ref = new Firebase("https://radiant-torch-8665.firebaseio.com/messages/");
+  this.createMessage = function(roomId, currentUser, message){
+    var roomMessageArr = $firebaseArray(ref.child(roomId));
+    var newMessage = {};
+    var userName = currentUser.password.email.split("@")[0];
+    newMessage.sender = userName;
+    newMessage.message = message;
+    roomMessageArr.$loaded()
+    .then(function(messageArr){
+      messageArr.$add(newMessage);
+    });
+  };
+
+  this.getAllMessages = function (roomId) {
+    var messagesRef = ref.child(roomId);
+    var query = messagesRef.limitToLast(25);
+    return $firebaseArray(query).$loaded();
   };
 }]);
