@@ -174,7 +174,7 @@
     "intersections": {    
       "i12": false,  
       "i13": false,
-      "i15": false,
+      "i14": false,
       "i22": false,
       "i23": false,
       "i24": false,
@@ -350,9 +350,408 @@
       }
     },  
 
-    
-    
-    
+//INTERSECTIONS
+
+"intersections": {
+  "i0": {
+    "trade ratio": false, 
+    "roads": {
+      "i1": false, 
+      "i9": false,
+    },
+  "i1": {
+    "trade ratio": false, 
+    "roads": {
+      "i0": false, 
+      "i2": false,
+    },
+  "i2": {
+    "trade ratio": false, 
+    "roads": {
+      "i1": false, 
+      "i11": false,
+      "i3": false
+    },
+  "i3": {
+    "trade ratio": false, 
+    "roads": {
+      "i2": false, 
+      "i4": false,
+    },
+  "i4": {
+    "trade ratio": false, 
+    "roads": {
+      "i3": false, 
+      "i13": false,
+      "i5": false
+    },
+  "i5": {
+    "trade ratio": false, 
+    "roads": {
+      "i4": false, 
+      "i6": false,
+    },
+  "i6": {
+    "trade ratio": false, 
+    "roads": {
+      "i5": false, 
+      "i15": false,
+    },
+  "i8": {
+    "trade ratio": false, 
+    "roads": {
+      "i9": false, 
+      "i18": false,
+    },
+  "i9": {
+    "trade ratio": false, 
+    "roads": {
+      "i0": false, 
+      "i8": false,
+      "i10": false
+    },
+  "i10": {
+    "trade ratio": false, 
+    "roads": {
+      "i9": false, 
+      "i20": false,
+      "i11": false
+    },
+  "i11": {
+    "trade ratio": false, 
+    "roads": {
+      "i10": false, 
+      "i2": false,
+      "i12": false
+    },
+  "i12": {
+    "trade ratio": false, 
+    "roads": {
+      "i11": false, 
+      "i22": false,
+      "i13": false
+    },
+  "i13": {
+    "trade ratio": false, 
+    "roads": {
+      "i12": false, 
+      "i4": false,
+      "i14": false
+    },
+  "i14": {
+    "trade ratio": false, 
+    "roads": {
+      "i13": false, 
+      "i24": false,
+      "i15": false
+    },
+  "i15": {
+    "trade ratio": false, 
+    "roads": {
+      "i14": false, 
+      "i6": false,
+      "i16": false
+    },
+  "i16": {
+    "trade ratio": false, 
+    "roads": {
+      "i15": false, 
+      "i26": false,
+    },
+  "i17": {
+    "trade ratio": false, 
+    "roads": {
+      "i18": false, 
+      "i28": false,
+    },
+  "i18": {
+    "trade ratio": false, 
+    "roads": {
+      "i8": false, 
+      "i17": false,
+      "i19": false
+    },
+  "i19": {
+    "trade ratio": false, 
+    "roads": {
+      "i18": false, 
+      "i30": false,
+      "i20": false
+    },
+  "i20": {
+    "trade ratio": false, 
+    "roads": {
+      "i19": false, 
+      "i10": false,
+      "i21": false
+    },
+  "i21": {
+    "trade ratio": false, 
+    "roads": {
+      "i20": false, 
+      "i32": false,
+      "i22": false
+    },
+  "i22": {
+    "trade ratio": false, 
+    "roads": {
+      "i21": false, 
+      "i12": false,
+      "i23": false
+    },
+  "i23": {
+    "trade ratio": false, 
+    "roads": {
+      "i22": false, 
+      "i34": false,
+      "i24": false
+    },
+  "i24": {
+    "trade ratio": false, 
+    "roads": {
+      "i23": false, 
+      "i14": false,
+      "i25": false
+    },
+  "i25": {
+    "trade ratio": false, 
+    "roads": {
+      "i24": false, 
+      "i36": false,
+      "i26": false
+    },
+  "i26": {
+    "trade ratio": false, 
+    "roads": {
+      "i25": false, 
+      "i16": false,
+      "i27": false
+    },
+  "i27": {
+    "trade ratio": false, 
+    "roads": {
+      "i26": false, 
+      "i38": false,
+    },
+  "i28": {
+    "trade ratio": false, 
+    "roads": {
+      "i17": false, 
+      "i29": false,
+    },
+  "i29": {
+    "trade ratio": false, 
+    "roads": {
+      "i28": false, 
+      "i39": false,
+      "i30": false
+    },
+  "i30": {
+    "trade ratio": false, 
+    "roads": {
+      "i29": false, 
+      "i19": false,
+      "i31": false
+    },
+  "i31": {
+    "trade ratio": false, 
+    "roads": {
+      "i30": false, 
+      "i41": false,
+      "i32": false
+    },
+  "i32": {
+    "trade ratio": false, 
+    "roads": {
+      "i31": false, 
+      "i21": false,
+      "i33": false
+    },
+  "i33": {
+    "trade ratio": false, 
+    "roads": {
+      "i32": false, 
+      "i43": false,
+      "i34": false
+    },
+  "i34": {
+    "trade ratio": false, 
+    "roads": {
+      "i33": false, 
+      "i23": false,
+      "i35": false
+    },
+  "i35": {
+    "trade ratio": false, 
+    "roads": {
+      "i34": false, 
+      "i45": false,
+      "i36": false
+    },
+  "i36": {
+    "trade ratio": false, 
+    "roads": {
+      "i35": false, 
+      "i25": false,
+      "i37": false
+    },
+  "i37": {
+    "trade ratio": false, 
+    "roads": {
+      "i36": false, 
+      "i47": false,
+      "i38": false
+    },
+  "i38": {
+    "trade ratio": false, 
+    "roads": {
+      "i27": false, 
+      "i37": false,
+    },
+  "i39": {
+    "trade ratio": false, 
+    "roads": {
+      "i29": false, 
+      "i40": false,
+    },
+  "i40": {
+    "trade ratio": false, 
+    "roads": {
+      "i39": false, 
+      "i48": false,
+      "i41": false
+    },
+  "i41": {
+    "trade ratio": false, 
+    "roads": {
+      "i40": false, 
+      "i31": false,
+      "i42": false
+    },
+  "i42": {
+    "trade ratio": false, 
+    "roads": {
+      "i41": false, 
+      "i50": false,
+      "i43": false
+    },
+  "i43": {
+    "trade ratio": false, 
+    "roads": {
+      "i42": false, 
+      "i33": false,
+      "i44": false
+    },
+  "i44": {
+    "trade ratio": false, 
+    "roads": {
+      "i43": false, 
+      "i52": false,
+      "i45": false
+    },
+  "i45": {
+    "trade ratio": false, 
+    "roads": {
+      "i44": false, 
+      "i35": false,
+      "i46": false
+    },
+  "i46": {
+    "trade ratio": false, 
+    "roads": {
+      "i45": false, 
+      "i54": false,
+      "i47": false
+    },
+  "i47": {
+    "trade ratio": false, 
+    "roads": {
+      "i46": false, 
+      "i37": false,
+    },
+  "i48": {
+    "trade ratio": false, 
+    "roads": {
+      "i40": false, 
+      "i49": false,
+    },
+  "i49": {
+    "trade ratio": false, 
+    "roads": {
+      "i48": false, 
+      "i50": false,
+    },
+  "i50": {
+    "trade ratio": false, 
+    "roads": {
+      "i49": false, 
+      "i42": false,
+      "i51": false
+    },
+  "i51": {
+    "trade ratio": false, 
+    "roads": {
+      "i50": false, 
+      "i52": false,
+    },
+  "i52": {
+    "trade ratio": false, 
+    "roads": {
+      "i51": false, 
+      "i44": false,
+      "i53": false
+    },
+  "i53": {
+    "trade ratio": false, 
+    "roads": {
+      "i52": false, 
+      "i54": false,
+    },
+  "i54": {
+    "trade ratio": false, 
+    "roads": {
+      "i53": false, 
+      "i46": false,
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
